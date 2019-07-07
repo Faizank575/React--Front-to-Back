@@ -1,26 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import React,{Component} from 'react';
+import Contact from './components/Contact';
+import Header from './components/header';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+class App extends Component{
+render(){
+  return(
+    <div class="App">
+      <Header branding="Contact Manger"/>
+      <Contact name="Faizan Khan" email="faizank575@gmail.com" phoneNo="+923015891918"/>
+      <Contact name="Hanzla Khan" email="hanzlak575@gmail.com" phoneNo="+923015891918"/>
     </div>
-  );
+  )
+}
 }
 
 export default App;
