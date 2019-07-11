@@ -2,6 +2,10 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types';
 // import './contact.css' ;
 class Contact extends Component {
+    state={}
+    onShowClick=(e)=>{
+        console.log(this.state)
+    }
 
     // Another way to set Proptypes
     // static propTypes= {
@@ -13,7 +17,7 @@ class Contact extends Component {
         const {contact}=this.props;
         return (
             <div className="card card-body mb-3">
-                <h4>{contact.name}</h4>
+                <h4 onClick={this.onShowClick}>{contact.name}{' '}<i  className="fas fa-sort-down"></i></h4>
                 <ul className="list-group">
                     <li className="list-group-item">{contact.email}</li>
                     <li className="list-group-item">{contact.phoneNo}</li>
