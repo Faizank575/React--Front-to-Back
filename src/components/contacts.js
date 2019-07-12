@@ -21,11 +21,17 @@ state={
             }
         ]
     };
+
+    deleteContact =(id)=>{
+        const {contacts}=this.state;
+        const updatedContacts=contacts.filter(contact => contact.id !== id);
+        this.setState({contacts:updatedContacts});
+    }
     render() {
         const {contacts}=this.state
         return (
             <React.Fragment>
-                {contacts.map(contact=>(<Contact key={contact.id} contact={contact}/>))}
+                {contacts.map(contact=>(<Contact key={contact.id} contact={contact} deleteContactHandler={this.deleteContact.bind(this,contact.id)}/>))}
             </React.Fragment>
         )
     }

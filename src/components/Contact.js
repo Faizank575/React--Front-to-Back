@@ -1,9 +1,16 @@
 import React, { Component } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
+import { faSortDown, faTimes } from '@fortawesome/free-solid-svg-icons';
+
 // import './contact.css' ;
 class Contact extends Component {
     state={
         showContactInfo:true
+    }
+
+    onDeleteClick =(e)=>{
+        this.props.deleteContactHandler();
     }
     onShowClick= e => {
         this.setState({showContactInfo:!this.state.showContactInfo});
@@ -20,7 +27,7 @@ class Contact extends Component {
         const{showContactInfo}=this.state;
         return (
             <div className="card card-body mb-3">
-                <h4 onClick={this.onShowClick}>{contact.name}{' '}<i  className="fas fa-sort-down"></i></h4>
+                <h4 >{contact.name}{' '}<FontAwesomeIcon style={{cursor:'pointer'}} onClick={this.onShowClick} icon={faSortDown}/><FontAwesomeIcon style={{cursor:'pointer',float:'right',color:'red'}} icon={faTimes} onClick={this.onDeleteClick}/></h4>
                 { showContactInfo ? (
                 <ul className="list-group">
                     <li className="list-group-item">{contact.email}</li>
@@ -32,6 +39,7 @@ class Contact extends Component {
 }
 Contact.propTypes = {
     contact:PropTypes.object.isRequired,
+    deleteContactHandler:PropTypes.func.isRequired
 
 
 };
