@@ -6,7 +6,7 @@ import { faSortDown, faTimes } from '@fortawesome/free-solid-svg-icons';
 // import './contact.css' ;
 class Contact extends Component {
     state={
-        showContactInfo:true
+        showContactInfo:false
     }
 
     onDeleteClick =(e)=>{
