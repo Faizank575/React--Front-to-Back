@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Contact from './Contact';
 
-import {Consumer} from '../context';
+import {Consumer} from '../../context';
 
 class Contacts extends Component {
 
@@ -18,7 +18,7 @@ class Contacts extends Component {
                     value=>{
                         return(
                         <React.Fragment>
-                        {value.contacts.map(contact=>(<Contact key={contact.id} contact={contact} deleteContactHandler={this.deleteContact.bind(this,contact.id)}/>))}
+                        {value.contacts.map(contact=>(<Contact key={contact.id} contact={contact}/>))}
                     </React.Fragment>
                         )
                     }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
-import {Consumer} from '../context.js';
+import {Consumer} from '../../context.js';
 import { faSortDown, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 // import './contact.css' ;
@@ -50,8 +50,7 @@ class Contact extends Component {
     }
 }
 Contact.propTypes = {
-    contact:PropTypes.object.isRequired,
-    deleteContactHandler:PropTypes.func.isRequired
+    contact:PropTypes.object.isRequired
 
 
 };
